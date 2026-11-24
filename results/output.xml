@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.11.9 on win32)" generated="2026-11-23T22:43:07.228740" rpa="false" schemaversion="5">
+<suite id="s1" name="SwagLabs-RobotFramework-Tests" source="c:\Users\Joachim Pehkonen\OneDrive\Koulutehtävät\Fundamentals of Functional Testing\RobotFramework\SwagLabs-RobotFramework-Tests">
+<suite id="s1-s1" name="Tests" source="c:\Users\Joachim Pehkonen\OneDrive\Koulutehtävät\Fundamentals of Functional Testing\RobotFramework\SwagLabs-RobotFramework-Tests\tests">
+<suite id="s1-s1-s1" name="Login" source="c:\Users\Joachim Pehkonen\OneDrive\Koulutehtävät\Fundamentals of Functional Testing\RobotFramework\SwagLabs-RobotFramework-Tests\tests\login">
+<suite id="s1-s1-s1-s1" name="Login" source="c:\Users\Joachim Pehkonen\OneDrive\Koulutehtävät\Fundamentals of Functional Testing\RobotFramework\SwagLabs-RobotFramework-Tests\tests\login\login.robot">
+<test id="s1-s1-s1-s1-t1" name="Unsuccessful login with incorrect credentials" line="19">
+<kw name="Open the intranet website">
+<kw name="Open Available Browser" owner="RPA.Browser.Selenium">
+<msg time="2026-11-23T22:43:08.867083" level="INFO">Downloaded webdriver to: C:\Users\Joachim Pehkonen\AppData\Local\robocorp\webdrivers\.wdm\drivers\chromedriver\win64\157.0.8103\chromedriver-win64/chromedriver.exe</msg>
+<msg time="2026-11-23T22:43:08.884012" level="INFO">Webdriver version taken into use: ChromeDriver 157.0.8103.78 (4b3d0dabb8250b6f152d2d85d79e7706e309d087-refs/branch-heads/8103@{#1573})
+</msg>
+<msg time="2026-11-23T22:43:08.888084" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-11-23T22:43:09.654444" level="INFO">Created Chrome browser (version 157.0.8103) with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg time="2026-11-23T22:43:09.654444" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2026-11-23T22:43:09.654958" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<status status="PASS" start="2026-11-23T22:43:07.527377" elapsed="2.367781"/>
+</kw>
+<status status="PASS" start="2026-11-23T22:43:07.526866" elapsed="2.368292"/>
+</kw>
+<kw name="Set Selenium Speed" owner="RPA.Browser.Selenium">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-11-23T22:43:09.895673" elapsed="0.000000"/>
+</kw>
+<kw name="Use Credentials">
+<kw name="Input Text" owner="RPA.Browser.Selenium">
+<msg time="2026-11-23T22:43:09.895673" level="INFO">Typing text 'incorrect_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-23T22:43:09.895673" elapsed="3.046996"/>
+</kw>
+<kw name="Input Password" owner="RPA.Browser.Selenium">
+<msg time="2026-11-23T22:43:12.943181" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-11-23T22:43:14.956492" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-23T22:43:12.943181" elapsed="3.032699"/>
+</kw>
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-23T22:43:15.976392" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-23T22:43:15.975880" elapsed="3.033604"/>
+</kw>
+<arg>${incorrect_username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-11-23T22:43:09.895673" elapsed="9.113811"/>
+</kw>
+<status status="PASS" start="2026-11-23T22:43:07.524821" elapsed="11.485173"/>
+</test>
+<doc>Test correct credentials using standard user for logging in.</doc>
+<status status="PASS" start="2026-11-23T22:43:07.256477" elapsed="11.757110"/>
+</suite>
+<status status="PASS" start="2026-11-23T22:43:07.253903" elapsed="11.761746"/>
+</suite>
+<status status="PASS" start="2026-11-23T22:43:07.250274" elapsed="11.767915"/>
+</suite>
+<status status="PASS" start="2026-11-23T22:43:07.232933" elapsed="11.792515"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="SwagLabs-RobotFramework-Tests" id="s1" pass="1" fail="0" skip="0">SwagLabs-RobotFramework-Tests</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">SwagLabs-RobotFramework-Tests.Tests</stat>
+<stat name="Login" id="s1-s1-s1" pass="1" fail="0" skip="0">SwagLabs-RobotFramework-Tests.Tests.Login</stat>
+<stat name="Login" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">SwagLabs-RobotFramework-Tests.Tests.Login.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
