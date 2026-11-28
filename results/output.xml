@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.15.2 on darwin)" generated="2026-11-27T15:13:28.390868" rpa="true" schemaversion="5">
+<suite id="s1" name="Checkout" source="/Users/oonakarkkainen/Documents/SwagLabs-RobotFramework-Tests/tests/checkout/checkout.robot">
+<test id="s1-t1" name="TS-07: Successful checkout with valid information" line="15">
+<kw name="Open the Swag Labs website">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-11-27T15:13:28.654824" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False, 'profile.password_manager_leak_detection': False}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=${False}</arg>
+<arg>profile.password_manager_enabled=${False}</arg>
+<arg>profile.password_manager_leak_detection=${False}</arg>
+<doc>Creates and returns a dictionary based on the given `items`.</doc>
+<status status="PASS" start="2026-11-27T15:13:28.654570" elapsed="0.000277"/>
+</kw>
+<kw name="Open Available Browser" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:28.929737" level="INFO">Downloaded webdriver to: /Users/oonakarkkainen/.robocorp/webdrivers/.wdm/drivers/chromedriver/mac-arm64/158.0.8127/chromedriver-mac-arm64/chromedriver</msg>
+<msg time="2026-11-27T15:13:29.104791" level="INFO">Webdriver version taken into use: ChromeDriver 158.0.8127.88 (0cefb18236a23db1ebb6b2bc040fbbaf8cbe759e-refs/branch-heads/8127_36@{#32})
+</msg>
+<msg time="2026-11-27T15:13:29.107405" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-11-27T15:13:30.277623" level="INFO">Created chrome browser (version 158.0.8127) with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg time="2026-11-27T15:13:30.277735" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2026-11-27T15:13:30.277790" level="INFO">Opening url 'https://www.saucedemo.com'</msg>
+<arg>${URL}</arg>
+<arg>browser_selection=chrome</arg>
+<arg>preferences=${prefs}</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<status status="PASS" start="2026-11-27T15:13:28.654987" elapsed="2.094097"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:28.654163" elapsed="2.095234"/>
+</kw>
+<kw name="Log in">
+<kw name="Input Text" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:30.750504" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:30.750159" elapsed="0.106735"/>
+</kw>
+<kw name="Input Password" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:30.857222" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2026-11-27T15:13:30.867627" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:30.857042" elapsed="0.031302"/>
+</kw>
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:30.888601" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:30.888466" elapsed="0.042476"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:30.749853" elapsed="0.181182"/>
+</kw>
+<kw name="Add product to cart">
+<kw name="Wait Until Element Is Visible" owner="RPA.Browser.Selenium">
+<arg>id:add-to-cart-sauce-labs-backpack</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-27T15:13:30.931745" elapsed="0.107070"/>
+</kw>
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.039109" level="INFO">Clicking button 'id:add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id:add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.038947" elapsed="0.024265"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:30.931251" elapsed="0.132029"/>
+</kw>
+<kw name="Open shopping cart">
+<kw name="Click Element" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.063702" level="INFO">Clicking element 'class:shopping_cart_link'.</msg>
+<arg>class:shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.063586" elapsed="0.027441"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="RPA.Browser.Selenium">
+<arg>id:checkout</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.091161" elapsed="0.221010"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:31.063411" elapsed="0.248922"/>
+</kw>
+<kw name="Start checkout">
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.313205" level="INFO">Clicking button 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.312957" elapsed="0.045287"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="RPA.Browser.Selenium">
+<arg>checkout-step-one.html</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.358377" elapsed="0.011373"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:31.312635" elapsed="0.057171"/>
+</kw>
+<kw name="Enter checkout information">
+<kw name="Wait Until Element Is Visible" owner="RPA.Browser.Selenium">
+<arg>id:first-name</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.370084" elapsed="0.007369"/>
+</kw>
+<kw name="Input Text" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.377657" level="INFO">Typing text 'Test' into text field 'id:first-name'.</msg>
+<arg>id:first-name</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.377537" elapsed="0.029741"/>
+</kw>
+<kw name="Input Text" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.407556" level="INFO">Typing text 'User' into text field 'id:last-name'.</msg>
+<arg>id:last-name</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.407405" elapsed="0.023028"/>
+</kw>
+<kw name="Input Text" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.430677" level="INFO">Typing text '00100' into text field 'id:postal-code'.</msg>
+<arg>id:postal-code</arg>
+<arg>${POSTAL_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.430537" elapsed="0.026550"/>
+</kw>
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.457324" level="INFO">Clicking button 'id:continue'.</msg>
+<arg>id:continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.457202" elapsed="0.031085"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:31.369943" elapsed="0.118431"/>
+</kw>
+<kw name="Review and finish order">
+<kw name="Wait Until Element Is Visible" owner="RPA.Browser.Selenium">
+<arg>id:finish</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.488715" elapsed="0.011084"/>
+</kw>
+<kw name="Page Should Contain" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.507585" level="INFO">Current page contains text 'Sauce Labs Backpack'.</msg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.499918" elapsed="0.007718"/>
+</kw>
+<kw name="Click Button" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.507824" level="INFO">Clicking button 'id:finish'.</msg>
+<arg>id:finish</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.507715" elapsed="0.024221"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:31.488550" elapsed="0.043449"/>
+</kw>
+<kw name="Verify order confirmation">
+<kw name="Wait Until Page Contains" owner="RPA.Browser.Selenium">
+<arg>Thank you for your order!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.532294" elapsed="0.004243"/>
+</kw>
+<kw name="Page Should Contain" owner="RPA.Browser.Selenium">
+<msg time="2026-11-27T15:13:31.540376" level="INFO">Current page contains text 'Thank you for your order!'.</msg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.536638" elapsed="0.003774"/>
+</kw>
+<kw name="Close Browser" owner="RPA.Browser.Selenium">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-11-27T15:13:31.540474" elapsed="0.076745"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:31.532149" elapsed="0.085152"/>
+</kw>
+<status status="PASS" start="2026-11-27T15:13:28.653842" elapsed="2.963588"/>
+</test>
+<doc>TS-07: Successful checkout with valid information.</doc>
+<status status="PASS" start="2026-11-27T15:13:28.391690" elapsed="3.226055"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Checkout" id="s1" pass="1" fail="0" skip="0">Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
